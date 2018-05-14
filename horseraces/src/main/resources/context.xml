@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <context:property-placeholder location="classpath:settings.properties" />
+    <context:annotation-config/>
+
+
+    <import resource="horses.xml"/>
+    <import resource="riders.xml"/>
+    <import resource="breeds.xml"/>
+    <import resource="members.xml"/>
+
+
+    <bean name="raceService" class="services.RaceServiceImpl">
+        <property name="lengthOfRace" value="${race_service.length}"/>
+        <!--<property name="members">-->
+            <!--<list>-->
+                <!--<ref bean="member1"/>-->
+                <!--<ref bean="member2"/>-->
+                <!--<ref bean="member3"/>-->
+            <!--</list>-->
+        <!--</property>-->
+    </bean>
+
+    <bean name="emulationService" class="services.EmulationServiceImpl">
+        <property name="updateFrequencyInSeconds" value="${emulator_service.update_time}"/>
+        <property name="raceService" ref="raceService"/>
+    </bean>
+
+</beans>

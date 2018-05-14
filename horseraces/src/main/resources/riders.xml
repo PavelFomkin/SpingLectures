@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="rider1" class="domains.Rider">
+        <property name="firstName" value="Pavel"/>
+        <property name="lastName" value="Fomkin"/>
+        <property name="age" value="27"/>
+        <property name="weight" value="70"/>
+        <property name="skill" value="PRO"/>
+    </bean>
+
+    <bean id="rider2" class="domains.Rider">
+        <property name="firstName" value="Ivan"/>
+        <property name="lastName" value="Ivanov"/>
+        <property name="age" value="22"/>
+        <property name="weight" value="65"/>
+        <property name="skill" value="PRO"/>
+    </bean>
+
+    <bean id="rider3" class="domains.Rider">
+        <property name="firstName" value="Petya"/>
+        <property name="lastName" value="Petrov"/>
+        <property name="age" value="18"/>
+        <property name="weight" value="58"/>
+        <property name="skill" value="MASTER"/>
+    </bean>
+
+</beans>
