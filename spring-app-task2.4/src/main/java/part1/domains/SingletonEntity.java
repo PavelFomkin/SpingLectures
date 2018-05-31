@@ -1,4 +1,4 @@
-package domains;
+package part1.domains;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +11,6 @@ import java.util.Random;
 @Setter
 @NoArgsConstructor
 @Component
-public class PrototypeEntity{
+public class SingletonEntity{
     private Integer random = new Random().nextInt(1000);
 }

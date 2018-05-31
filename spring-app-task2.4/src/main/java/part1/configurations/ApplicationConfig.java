@@ -1,14 +1,21 @@
-import domains.*;
+package part1.configurations;
+
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.*;
-import services.BeanFactoryService;
-import services.ServiceWrapper;
-import services.SingletonAndPrototypeService;
-import services.UsualService;
-import services.impl.UnusualServiceImpl;
-import services.impl.UnusualServiceImpl2;
-import services.impl.UsualServiceImpl;
-import services.impl.UsualServiceImpl2;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.Scope;
+import part1.domains.Entity;
+import part1.domains.PrototypeEntity;
+import part1.domains.SingletonEntity;
+import part1.utils.BeanFactory;
+import part1.utils.ServiceWrapper;
+import part1.utils.SingletonAndPrototypeService;
+import part1.services.UsualService;
+import part1.services.impl.UnusualServiceImpl;
+import part1.services.impl.UnusualServiceImpl2;
+import part1.services.impl.UsualServiceImpl;
+import part1.services.impl.UsualServiceImpl2;
 
 @Configuration
 @PropertySource("app.properties")
@@ -62,8 +69,8 @@ public class ApplicationConfig {
     }
 
     @Bean("beanFactoryService")
-    public BeanFactoryService beanFactoryService() {
-        return new BeanFactoryService();
+    public BeanFactory beanFactoryService() {
+        return new BeanFactory();
     }
 
 }

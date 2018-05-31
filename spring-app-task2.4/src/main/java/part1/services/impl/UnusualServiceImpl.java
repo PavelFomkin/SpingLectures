@@ -1,11 +1,10 @@
-package services.impl;
+package part1.services.impl;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import services.UnusualService;
+import part1.services.UnusualService;
 
 @Service
-public class UnusualServiceImpl2 implements UnusualService{
+public class UnusualServiceImpl implements UnusualService{
 
     @Override
     public void doNothing() {

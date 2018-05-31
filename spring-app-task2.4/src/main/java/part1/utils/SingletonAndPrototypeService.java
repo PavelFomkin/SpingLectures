@@ -1,8 +1,7 @@
-package services;
+package part1.utils;
 
-import domains.PrototypeEntity;
-import domains.SingletonEntity;
-import lombok.AllArgsConstructor;
+import part1.domains.PrototypeEntity;
+import part1.domains.SingletonEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

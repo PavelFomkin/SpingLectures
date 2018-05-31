@@ -1,12 +1,15 @@
+package part1;
+
+import part1.configurations.ApplicationConfig;
+import part1.domains.NoBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
-import services.BeanFactoryService;
-import services.ServiceWrapper;
-import services.SingletonAndPrototypeService;
+import part1.utils.ServiceWrapper;
+import part1.utils.SingletonAndPrototypeService;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
         ServiceWrapper service = context.getBean("wrapper", ServiceWrapper.class);
@@ -28,8 +31,10 @@ public class Main {
         System.out.println("service3 fields: singleton = " + service3.getSingletonEntity().getRandom() +
                 "\t prototype = " + service3.getPrototypeEntity().getRandom());
 
-        BeanFactoryService service4 = context.getBean("beanFactoryService", BeanFactoryService.class);
-        System.out.println(service4.createBean("bean 1"));
-        System.out.println(service4.createBean("bean 2"));
+        NoBean noBean1 = context.getBean(NoBean.class);
+        System.out.println(noBean1);
+        NoBean noBean2 = context.getBean(NoBean.class);
+        System.out.println(noBean2);
+
     }
 }

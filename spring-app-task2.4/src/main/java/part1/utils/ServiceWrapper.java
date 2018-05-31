@@ -1,6 +1,6 @@
-package services;
+package part1.utils;
 
-import domains.Entity;
+import part1.domains.Entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import part1.services.UnusualService;
+import part1.services.UsualService;
 
 import java.util.List;
 

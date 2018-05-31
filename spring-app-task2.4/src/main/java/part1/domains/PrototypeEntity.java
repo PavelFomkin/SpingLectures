@@ -1,16 +1,16 @@
-package domains;
+package part1.domains;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 @Component
-public class Entity {
-    private String name;
+public class PrototypeEntity{
+    private Integer random = new Random().nextInt(1000);
 }
